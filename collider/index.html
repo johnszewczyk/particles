@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        flex: 0 1 auto;
+        border-radius: .5em;
+        font-family: verdana;
+        justify-content: center;
+        margin: .25em;
+        padding: .25rem;
+        }
+      html {
+        background: black;
+        display: flex;
+        flex-direction: column;
+        margin: 0em;
+        padding: 0em;
+        }
+      body {
+        border: .25em solid purple;
+        display: flex;
+        background-color: black;
+        flex-direction: column;
+        margin: auto;
+        /* height: 100%; */
+      }
+      #bottom {
+        background: #555999;
+        border: 3px solid #222222;
+        display: flex;
+        flex-direction: column;
+      }
+      button {
+        background: steelblue;
+        box-shadow: .1em .1em .25em black;
+        cursor: pointer;
+        display: flex;
+        flex-grow: 1;
+        font-family: verdana;
+        font-weight: bold;
+        border: .5em solid steelblue;
+        display: flex;
+        justify-content: center;
+        }
+      button:active {
+        box-shadow: inset 0em 0em .1em black;
+        transform: translateY(.25em);
+      }
+      button:hover {
+        color: lime;
+        transition-duration: .25s;
+      }
+
+      #canvasWrapper {
+        align-items: center;
+        background: slategray;
+        border: 3px solid #222222;
+        display: flex;
+        height: 100%;
+      }
+      #maindiv {
+        background-color: #333666;
+        border: .1em solid grey;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+      }
+      #sectionHead {
+        background-color: #333333;
+        border: 2px solid black;
+        color: deeppink;
+        display: flex;
+        font-weight: bold;
+        letter-spacing: .1em;
+
+      }
+      #colWrap {
+        border: 3px solid #222222;
+
+        display: flex;
+        flex-direction: column;
+      }
+      #rowWrap {
+        background: #333333;
+        border: 2px solid black;
+
+
+        display: flex;
+        flex-direction: row;
+      }
+      canvas {
+        position: relative;
+      }
+    </style>
+
+  </head>
+  <body>
+     <div id="maindiv">
+        <div id="canvasWrapper">
+           <canvas id="staticCanvas" width="500" height="500"
+              style="border: 0px solid deeppink;background: #222222;">
+              Your browser does not support the canvas element.
+           </canvas>
+        </div>
+
+
+        <!-- FIRST TOOLBAR -->
+
+
+        <div id="bottom">
+          <div id="sectionHead">
+            Particle Size
+          </div>
+
+          <!-- <div id=rowWrap>
+            <input type="text" name="name" id="get_swarmS" value="3">
+            </input>
+            <button onclick="get_swarmS()">Size</button>
+
+            <input type="text" name="name" id="get_swarmD" value="10">
+            </input>
+            <button onclick="get_swarmD()">Density</button>
+          </div> -->
+
+          <div id=rowWrap>
+
+            <button onclick="setSize1()">1</button>
+            <button onclick="setSize3()">3</button>
+            <button onclick="setSize5()">5</button>
+            <button onclick="setSize7()">7</button>
+            <button onclick="setSize10()">10</button>
+            <button onclick="setSize15()">15</button>
+
+          </div>
+
+        </div>
+
+
+        <!-- SECOND TOOLBAR -->
+
+
+        <div id="bottom">
+          <div id="sectionHead">
+            Density
+          </div>
+
+          <div id=rowWrap>
+
+            <button onclick="setDens1()">1</button>
+            <button onclick="setDens5()">5</button>
+            <button onclick="setDens10()">10</button>
+            <button onclick="setDens20()">20</button>
+            <button onclick="setDens30()">30</button>
+            <button onclick="setDens50()">50</button>
+
+          </div>
+
+        </div>
+        <div id="bottom">
+          <div id="sectionHead">
+            Color
+          </div>
+
+          <div id=rowWrap>
+
+            <button onclick="color1()">1</button>
+            <button onclick="color2()">2</button>
+            <button onclick="color3()">3</button>
+            <button onclick="color4()">4</button>
+            <button onclick="color5()">5</button>
+
+          </div>
+
+        </div>
+
+
+        <!-- FOURTH TOOLBAR -->
+
+
+        <div id="bottom">
+          <div id="sectionHead">
+            Reset
+          </div>
+          <div id=rowWrap>
+
+            <button onclick="reset()">Reset</button>
+            <button onclick="color2()">2</button>
+            <button onclick="color3()">3</button>
+            <button onclick="color4()">4</button>
+            <button onclick="color5()">5</button>
+
+          </div>
+        </div>
+
+
+
+     </div>
+     </div>
+
+
+     <!-- SCRIPTS -->
+
+
+     <script src="c.block.js"></script>
+     <script src="c.swarm.js"></script>
+     <script src="collider.js"></script>
+
+  </body>
+</html>
